@@ -1,0 +1,60 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Cfop {
+  code: String!
+  id: ID!
+  name: String!
+}
+
+input CreateCfopInput {
+  code: String!
+  id: String!
+  name: String!
+}
+
+input CreateTaxRateInput {
+  cfopInterStateId: String!
+  cfopIntraStateId: String!
+  descripyion: String!
+  id: ID!
+}
+
+type Mutation {
+  createCfop(createCfopInput: CreateCfopInput!): Cfop!
+  createTaxRate(createTaxRateInput: CreateTaxRateInput!): TaxRate!
+  removeCfop(id: Int!): Cfop!
+  removeTaxRate(id: Int!): TaxRate!
+  updateCfop(updateCfopInput: UpdateCfopInput!): Cfop!
+  updateTaxRate(updateTaxRateInput: UpdateTaxRateInput!): TaxRate!
+}
+
+type Query {
+  cfop(id: String!): Cfop!
+  cfops: [Cfop!]!
+  taxRate(id: String!): TaxRate!
+  taxRates: [TaxRate!]!
+}
+
+type TaxRate {
+  cfopInterState: Cfop!
+  cfopInterStateId: String!
+  cfopIntraState: Cfop!
+  cfopIntraStateId: String!
+  descripyion: String!
+  id: ID!
+}
+
+input UpdateCfopInput {
+  code: String
+  id: ID!
+  name: String
+}
+
+input UpdateTaxRateInput {
+  cfopInterStateId: String
+  cfopIntraStateId: String
+  descripyion: String
+  id: ID
+}
